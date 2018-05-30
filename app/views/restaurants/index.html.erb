@@ -3,6 +3,188 @@
     Restaurants
     <a href="/restaurants/new" class="btn btn-lg btn-success">New Restaurant</a>
   </h1>
+</div><div class="row mb-1">
+  <div class="col-md-12">
+    <%= search_form_for @q, :class => collapse_search_form, :id => "restaurants_filters" do |f| %>
+      <p class="lead">Narrow results:</p>
+
+        <div class="form-group">
+    <%= f.label :name_cont, "Name contains" %>
+    <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :google_url_cont, "Google url contains" %>
+    <%= f.text_field :google_url_cont, :class => "form-control", :placeholder => "Google url contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :google_rating, "Google rating" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :google_rating_gteq, :class => "form-control", :placeholder => "Google rating greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :google_rating_lteq, :class => "form-control", :placeholder => "Google rating less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :infatuation_url_cont, "Infatuation url contains" %>
+    <%= f.text_field :infatuation_url_cont, :class => "form-control", :placeholder => "Infatuation url contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :infatuation_rating, "Infatuation rating" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :infatuation_rating_gteq, :class => "form-control", :placeholder => "Infatuation rating greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :infatuation_rating_lteq, :class => "form-control", :placeholder => "Infatuation rating less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :newspaper_url_cont, "Newspaper url contains" %>
+    <%= f.text_field :newspaper_url_cont, :class => "form-control", :placeholder => "Newspaper url contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :newspaper_rating, "Newspaper rating" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :newspaper_rating_gteq, :class => "form-control", :placeholder => "Newspaper rating greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :newspaper_rating_lteq, :class => "form-control", :placeholder => "Newspaper rating less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :yelp_url_cont, "Yelp url contains" %>
+    <%= f.text_field :yelp_url_cont, :class => "form-control", :placeholder => "Yelp url contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :yelp_rating, "Yelp rating" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :yelp_rating_gteq, :class => "form-control", :placeholder => "Yelp rating greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :yelp_rating_lteq, :class => "form-control", :placeholder => "Yelp rating less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :foodly_rating, "Foodly rating" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :foodly_rating_gteq, :class => "form-control", :placeholder => "Foodly rating greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :foodly_rating_lteq, :class => "form-control", :placeholder => "Foodly rating less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :cuisine_cont, "Cuisine contains" %>
+    <%= f.text_field :cuisine_cont, :class => "form-control", :placeholder => "Cuisine contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :zipcode, "Zipcode" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :zipcode_gteq, :class => "form-control", :placeholder => "Zipcode greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :zipcode_lteq, :class => "form-control", :placeholder => "Zipcode less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :city_cont, "City contains" %>
+    <%= f.text_field :city_cont, :class => "form-control", :placeholder => "City contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :address_cont, "Address contains" %>
+    <%= f.text_field :address_cont, :class => "form-control", :placeholder => "Address contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :price, "Price" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :price_gteq, :class => "form-control", :placeholder => "Price greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :price_lteq, :class => "form-control", :placeholder => "Price less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+          <%= f.label :created_at, "Created at" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='created_atgteqPicker'>
+                  <%= f.text_field :created_at_gteq, :class => "form-control", :placeholder => "Created at greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='created_atlteqPicker'>
+                  <%= f.text_field :created_at_lteq, :class => "form-control", :placeholder => "Created at less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#created_atgteqPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atlteqPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atgteqPicker').on("dp.change", function (e) {
+                  $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#created_atlteqPicker').on("dp.change", function (e) {
+                  $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+        <div class="form-group">
+      <%= f.label :comments_body_cont, "Comment body contains" %>
+      <%= f.text_field :comments_body_cont, :class => "form-control", :placeholder => "Comment body contains" %>
+    </div>
+
+      <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+      <a href="/restaurants" class="btn btn-default btn-block mb-1">Clear filters</a>
+    <% end %>
+    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#restaurants_filters">
+      Show Filters
+    </a>
+  </div>
 </div>
 
 <div class="row">
