@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
 
   # Validations
 
+  validates :body, :presence => { :message => "Can't be blank" }
+
 end
