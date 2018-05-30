@@ -5,6 +5,8 @@ class Restaurant < ApplicationRecord
 
   # Validations
 
+  validates :city, :presence => { :message => "Can't be blank" }
+
   validates :cuisine, :presence => { :message => "Can't be blank" }
 
   validates :name, :uniqueness => true
