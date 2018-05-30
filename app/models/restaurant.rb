@@ -5,4 +5,6 @@ class Restaurant < ApplicationRecord
 
   # Validations
 
+  validates :zipcode, :length => { :minimum => 5, :maximum => 5 }
+
 end
