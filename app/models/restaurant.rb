@@ -5,6 +5,8 @@ class Restaurant < ApplicationRecord
 
   # Validations
 
+  validates :price, :presence => { :message => "Can't be blank" }
+
   validates :price, :numericality => { :less_than_or_equal_to => 4, :greater_than_or_equal_to => 1 }
 
   validates :zipcode, :presence => { :message => "Can't be blank" }
